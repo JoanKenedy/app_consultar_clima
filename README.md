@@ -1,54 +1,16 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta es una app que consulta el clima desde una 𝘼𝙋𝙄, Tecnologías o metodos utilizadas 𝙍𝙚𝙖𝙘𝙩, 𝙏𝙮𝙥𝙚𝙎𝙘𝙧𝙞𝙥𝙩, 𝘼𝙭𝙞𝙤𝙨  para las peticiones a la 𝘼𝙋𝙄, 𝙑𝘼𝙇𝙄𝘽𝙊𝙏 para validar la estructura de datos y de que tipo de dato son la que nos envia la 𝘼𝙋𝙄 ya que 𝙏𝙮𝙥𝙚𝙎𝙘𝙧𝙞𝙥𝙩 no infiere eso,
+𝙕𝙊𝘿 es una libreria que hace lo mismo que 𝙑𝘼𝙇𝙄𝘽𝙊𝙏.
 
-Currently, two official plugins are available:
+Al igual lo podemos 𝘾𝘼𝙎𝙏𝙀𝘼𝙍 con un Type e inferir la estrucura de la respuesta de la 𝘼𝙋𝙄 y que tipo de dato es cada valor.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tambien usamos una técnica llamada 𝙏𝙮𝙥𝙚 𝙜𝙪𝙖𝙧𝙙𝙨 que son funciones que permiten a 𝙏𝙮𝙥𝙚𝙎𝙘𝙧𝙞𝙥𝙩  inferir el tipo d evariabe den un bloque de código especifico en este caso de la respuesta de la 𝘼𝙋𝙄.
 
-## Expanding the ESLint configuration
+Pasamos la 𝙫𝙖𝙧𝙞𝙖𝙗𝙡𝙚𝙨 por la url de la api para poder traer los datos que necesitamos.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Asi como la utilizacion de 𝙫𝙖𝙧𝙞𝙖𝙗𝙡𝙚𝙨 𝙙𝙚 𝙚𝙣𝙩𝙤𝙧𝙣𝙤 y tener cuidado con información sensible.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Menejamos el éxito y fracaso de la promesa de manera 𝙖𝙨𝙞𝙣𝙘𝙧𝙤𝙣𝙖 con 𝙩𝙧𝙮 𝙘𝙖𝙩𝙘𝙝.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Tambie se hizo un 𝙨𝙥𝙞𝙣𝙣𝙚𝙧 para hacer a la alusion a un loading que esta esperando una respuesta de éxito o no de la respuesta.
