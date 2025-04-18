@@ -1,16 +1,41 @@
 # React + TypeScript + Vite
 
-Esta es una app que consulta el clima desde una 𝘼𝙋𝙄, Tecnologías o metodos utilizadas 𝙍𝙚𝙖𝙘𝙩, 𝙏𝙮𝙥𝙚𝙎𝙘𝙧𝙞𝙥𝙩, 𝘼𝙭𝙞𝙤𝙨  para las peticiones a la 𝘼𝙋𝙄, 𝙑𝘼𝙇𝙄𝘽𝙊𝙏 para validar la estructura de datos y de que tipo de dato son la que nos envia la 𝘼𝙋𝙄 ya que 𝙏𝙮𝙥𝙚𝙎𝙘𝙧𝙞𝙥𝙩 no infiere eso,
-𝙕𝙊𝘿 es una libreria que hace lo mismo que 𝙑𝘼𝙇𝙄𝘽𝙊𝙏.
+𝗔𝗽𝗽 𝗱𝗲𝗹 𝗖𝗹𝗶𝗺𝗮 - 𝗧𝗲𝗰𝗻𝗼𝗹𝗼𝗴𝗶́𝗮𝘀 𝘆 𝗘𝗻𝗳𝗼𝗾𝘂𝗲
 
-Al igual lo podemos 𝘾𝘼𝙎𝙏𝙀𝘼𝙍 con un Type e inferir la estrucura de la respuesta de la 𝘼𝙋𝙄 y que tipo de dato es cada valor.
+Esta es una aplicación que consulta información del clima a través de una API externa. A continuación, se detallan las tecnologías y métodos utilizados en su desarrollo:
 
-Tambien usamos una técnica llamada 𝙏𝙮𝙥𝙚 𝙜𝙪𝙖𝙧𝙙𝙨 que son funciones que permiten a 𝙏𝙮𝙥𝙚𝙎𝙘𝙧𝙞𝙥𝙩  inferir el tipo d evariabe den un bloque de código especifico en este caso de la respuesta de la 𝘼𝙋𝙄.
+𝐓𝐞𝐜𝐧𝐨𝐥𝐨𝐠𝐢́𝐚𝐬
+ 
+React: Librería principal para construir la interfaz de usuario.
 
-Pasamos la 𝙫𝙖𝙧𝙞𝙖𝙗𝙡𝙚𝙨 por la url de la api para poder traer los datos que necesitamos.
+TypeScript: Añade tipado estático para mayor robustez y mantenimiento del código.
 
-Asi como la utilizacion de 𝙫𝙖𝙧𝙞𝙖𝙗𝙡𝙚𝙨 𝙙𝙚 𝙚𝙣𝙩𝙤𝙧𝙣𝙤 y tener cuidado con información sensible.
+Axios: Cliente HTTP para realizar peticiones a la API de forma sencilla y eficiente.
 
-Menejamos el éxito y fracaso de la promesa de manera 𝙖𝙨𝙞𝙣𝙘𝙧𝙤𝙣𝙖 con 𝙩𝙧𝙮 𝙘𝙖𝙩𝙘𝙝.
+Zod / Valibot: Librerías para validar la estructura y tipos de datos que devuelve la API. Esto es importante porque TypeScript no infiere automáticamente el contenido de una respuesta externa.
 
-Tambie se hizo un 𝙨𝙥𝙞𝙣𝙣𝙚𝙧 para hacer a la alusion a un loading que esta esperando una respuesta de éxito o no de la respuesta.
+CSS Modules: Para estilos locales y evitar colisiones entre clases.
+
+𝐌𝐞𝐭𝐨𝐝𝐨𝐥𝐨𝐠𝐢́𝐚𝐬 𝐲 𝐛𝐮𝐞𝐧𝐚𝐬 𝐩𝐫𝐚́𝐜𝐭𝐢𝐜𝐚𝐬
+
+𝐕𝐚𝐥𝐢𝐝𝐚𝐜𝐢𝐨́𝐧 𝐝𝐞 𝐝𝐚𝐭𝐨𝐬:
+
+Se utiliza Zod (o Valibot) para definir esquemas de validación y asegurarnos de que los datos que provienen de la API cumplen con el formato esperado.
+
+Alternativamente, también se puede usar el type casting (as TipoEsperado) para "forzar" el tipo de la respuesta, aunque esto no valida que los datos realmente coincidan.
+
+Type Guards: Se implementan funciones que permiten a TypeScript inferir correctamente el tipo de una variable dentro de un bloque específico. Esto es útil para manejar respuestas de la API de manera segura.
+
+Variables por URL: Se pasan parámetros dinámicos a través de la URL para personalizar las consultas a la API (por ejemplo, ciudad, país, unidad de medida, etc.).
+
+Variables de entorno: Se utilizan para mantener información sensible fuera del código fuente (como claves de API).
+
+𝐌𝐚𝐧𝐞𝐣𝐨 𝐝𝐞 𝐞𝐬𝐭𝐚𝐝𝐨𝐬 𝐲 𝐞𝐫𝐫𝐨𝐫𝐞𝐬:
+
+Las peticiones se manejan de forma asincrónica usando async/await.
+
+Se implementa un bloque try/catch para capturar errores y manejar respuestas fallidas de forma controlada.
+
+𝐅𝐞𝐞𝐝𝐛𝐚𝐜𝐤 𝐯𝐢𝐬𝐮𝐚𝐥 (𝐔𝐗):
+
+Se muestra un spinner de carga mientras se espera la respuesta de la API, brindando una mejor experiencia al usuario.
